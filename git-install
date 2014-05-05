@@ -1,0 +1,6 @@
+#!/bin/sh
+# install git
+sudo apt-get install git -y
+
+git config --global user.email "cianan@simsindustries.com"
+git config --global user.name "Cianan Sims"
