@@ -1,0 +1,21 @@
+#!/bin/bash
+# install pip, virtualenv
+sudo apt-get install python-pip -y
+sudo pip install virtualenv
+sudo pip install virtualenvwrapper
+
+cd ~
+
+export WORKON_HOME=$HOME/.envs
+mkdir -p $WORKON_HOME
+export PROJ_HOME=$HOME/dev
+mkdir -p $PROJ_HOME
+
+# note that we use . and not source when in script
+source /usr/local/bin/virtualenvwrapper.sh
+
+echo " " >> $HOME/.bashrc
+echo "export WORKON_HOME=$HOME/.envs" >> $HOME/.bashrc
+echo "export PROJ_HOME=$HOME/dev" >> $HOME/.bashrc
+echo "source /usr/local/bin/virtualenvwrapper.sh" >> $HOME/.bashrc
+
