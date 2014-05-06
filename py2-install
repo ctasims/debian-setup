@@ -1,17 +1,26 @@
 #!/bin/sh
-# install python 2.7.6
-apt-get install build-essential -y
-apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev -y
+# install python 2.7.6 if it isn't currently installed
 
-cd ~/Downloads/
-wget http://python.org/ftp/python/2.7.6/Python-2.7.6.tgz
+PYTHON_OK=`python -c 'import sys; print ((3,0) >= sys.version_info >= (2,7,6))'`
+if [ $PYTHON_OK = False ]
+	then (
+		apt-get install build-essential -y
+		apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev -y
 
-tar -xvf Python-2.7.6.tgz
-cd Python-2.7.6
+		cd ~/Downloads/
+		wget http://python.org/ftp/python/2.7.6/Python-2.7.6.tgz
 
-./configure
-make
-sudo make install  # set as default python
+		tar -xvf Python-2.7.6.tgz
+		cd Python-2.7.6
 
+		./configure
+		make
+		sudo make install  # set as default python
+	)
+fi
+
+# install pip, virtualenv
+sudo apt-get install python-pip
+sudo pip install virtualenv
 
 
