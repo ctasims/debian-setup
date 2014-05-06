@@ -4,6 +4,7 @@
 # From https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
 
 cd ~
+mkdir vimtmp  # for backup files
 
 sudo apt-get install checkinstall -y
 sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \
