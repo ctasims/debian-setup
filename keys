@@ -1,0 +1,8 @@
+ssh-keygen -t rsa -C "cianan@simsindustries.com"
+
+ssh-add ~/.ssh/id_rsa
+
+# to copy key to clipboard
+sudo apt-get install xclip -y
+xclip -sel clip < ~/.ssh/id_rsa.pub
+
