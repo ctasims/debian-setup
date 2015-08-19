@@ -43,6 +43,7 @@ sudo wget https://download.jetbrains.com/python/pycharm-professional-4.5.3.tar.g
 mv pycharm-professional-4.5.3.tar.gz ~/Desktop/pycharm-4.5.3.tar.gz
 tar xfz ~/Desktop/pycharm-4.5.3.tar.gz
 mv ~/pycharm-4.5.3 ~/Desktop/pycharm-4.5.3
+sudo apt-get install --yes default-jre
 
 
 # Install VAGRANT
