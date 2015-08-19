@@ -33,6 +33,9 @@ sudo apt-get install --yes virtualbox-5.0
 # INSTALL PYTHON 3
 sudo apt-get install python3 python3-dev virtualenv
 
+# Install pip for python 2 (system)
+sudo apt-get install --yes python-pip
+
 
 # INSTALL PYCHARM 4.5.3
 # For different version, update this url
@@ -42,10 +45,13 @@ tar xfz ~/Desktop/pycharm-4.5.3.tar.gz
 mv ~/pycharm-4.5.3 ~/Desktop/pycharm-4.5.3
 
 
-# Install ANSIBLE, VAGRANT
-sudo apt-get install --yes ansible vagrant
+# Install VAGRANT
+sudo wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.4_x86_64.deb
+sudo dpkg -i vagrant_1.7.4_x86_64.deb
 
+# Install Ansible
+sudo pip install ansible
 
 # INSTALL FISH
 sudo apt-get install fish
-
+chsh -s /usr/bin/fish
